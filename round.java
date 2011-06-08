@@ -24,7 +24,7 @@ public class round {
 	
 	int checkPos(){
 		
-		return 0;
+		return 1;
 	}
 	
 	boolean setEntry(String txt,String dt, int pos,int unpos){
