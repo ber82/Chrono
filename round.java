@@ -23,8 +23,8 @@ public class round {
 	}
 	
 	int checkPos(){
-		
-		return 1;
+		// changed local
+		return 0;
 	}
 	
 	boolean setEntry(String txt,String dt, int pos,int unpos){
