@@ -104,8 +104,14 @@ public class logik {
 					
 					// if check status ok --> green
 					// else --> red
+					if (spiel[runde].checkPos()== 0)
+						myGui.JPosition[spiel[runde].lastset].setBackground(new Color(50,255,0));
+					else if (spiel[runde].checkPos()== 1){
+						myGui.JPosition[spiel[runde].lastset].setBackground(new Color(250,0,0));
+						spiel[runde].solve();
+					}
+						
 					
-					myGui.JPosition[spiel[runde].lastset].setBackground(new Color(50,255,0));	
 					spiel[runde].lastsetstat = 2;
 					//spiel[runde].lastset = -1;
 				}

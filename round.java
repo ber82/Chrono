@@ -23,8 +23,22 @@ public class round {
 	}
 	
 	int checkPos(){
-		
+		int last = -1;
+		for (int i = 0; i < n; i++ ){
+			if (roundentries[i].getActPos() != -1){
+				if (roundentries[i].getActPos() < last)
+					return 1;
+				last = roundentries[i].getActPos();				
+			}
+
+		}
 		return 0;
+	}
+	
+	void solve(){
+		for (int i = 0; i < n; i++ ){
+			roundentries[i].setActPos(roundentries[i].getSortPos());
+		}
 	}
 	
 	boolean setEntry(String txt,String dt, int pos,int unpos){
@@ -61,6 +75,9 @@ public class round {
 		}
 		lastset = setPos; 
 	}
+	
+
+	
 	void shiftup(int limit){
 		for (int i = 0; i < entries; i++){
 			if (roundentries[i].getActPos() >= limit)
