@@ -31,6 +31,8 @@ public class logik {
 		spiel[1].setEntry("sieben","14",7,5);
 		spiel[1].setEntry("acht","12",8,0);
 		
+		
+		
 	}
 	
 	void action(int entry,int pos){
@@ -44,10 +46,13 @@ public class logik {
 		int runde = 1;
 		
 		
-		for (int i = 0; i <= spiel[runde].entries; i++)
+		for (int i = 0; i < spiel[runde].entries; i++)
 			if (i <=  spiel[runde].nset){
+				
 				myGui.JPosNr[i].setVisible(true);
+				
 				myGui.JPosition[i].setVisible(true);
+				
 			}
 				
 				
@@ -95,7 +100,7 @@ public class logik {
 			switch (spiel[runde].lastsetstat){
 				
 				case 0:{
-					System.out.println(myGui.JPosition[spiel[runde].lastset].getBackground());
+					//System.out.println(myGui.JPosition[spiel[runde].lastset].getBackground());
 					myGui.JPosition[spiel[runde].lastset].setBackground(new Color(255,160,0));	
 					spiel[runde].lastsetstat = 1;
 				}

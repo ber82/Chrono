@@ -37,7 +37,7 @@ public class round {
 	
 	void solve(){
 		for (int i = 0; i < n; i++ ){
-			roundentries[i].setActPos(roundentries[i].getSortPos());
+			roundentries[i].setActPos(roundentries[i].getSortPos()-1);
 		}
 	}
 	

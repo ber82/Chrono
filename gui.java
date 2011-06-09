@@ -78,6 +78,7 @@ public class gui implements KeyListener{
 		JAntNr = new JLabel[10];
 		
 		JPosNr[8] = new JLabel("9" + " >",JLabel.CENTER);
+		//JPosNr[9] = new JLabel("10" + " >",JLabel.CENTER);
 		
 		JPosNr[8].setFont(new Font("Courier New",Font.BOLD, 18));
 		JPosNr[8].setForeground(Color.BLACK);
@@ -85,7 +86,8 @@ public class gui implements KeyListener{
 		JPosNr[8].setOpaque(true);
 		JPosNr[8].setBounds(5,475,45,40);
 		myFrame.add(JPosNr[8]);
-		
+		//JPosNr[9].setBounds(5,525,45,40);
+		//myFrame.add(JPosNr[9]);
 		
 		for(int j = 0;  j < 8;  ++j ){
 			JAntwort[j] = new JLabel("Antwort " + (j + 1),JLabel.CENTER);
@@ -205,6 +207,29 @@ public class gui implements KeyListener{
 				aktPosition = -1;
 			}
 		}	
+		else if (k.getKeyCode() == 96){
+			myLogik.spiel[1].solve();
+			myLogik.updateGui();
+		}
+
+		
+		// quick test key = 't'
+		else if (k.getKeyCode() == 84){
+			System.out.println("Test Solve");
+			myLogik.action(0,0);
+			myLogik.action(1,1);
+			myLogik.action(2,2);
+			myLogik.action(3,3);
+			myLogik.action(4,4);
+			myLogik.action(5,5);
+			myLogik.action(6,6);
+			//myLogik.action(7,7);
+
+			this.checkStatus();
+			myLogik.updateGui();
+		}
+			
+		
 		this.checkStatus();
 		
 
@@ -213,6 +238,7 @@ public class gui implements KeyListener{
 			
 		
 			if ( (aktAntwort != -1) && (aktPosition != -1) ){
+				System.out.println("Action: " + aktAntwort+" " +aktPosition );
 				myLogik.action(aktAntwort,aktPosition);
 				markAns[aktAntwort] = false;
 				markPos[aktPosition] = false;
