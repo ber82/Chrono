@@ -37,25 +37,16 @@ public class logik {
 	
 	void action(int entry,int pos){
 		spiel[1].setActPos(entry,pos);
-		
-		
 	}
-
 	
 	void updateGui(){
 		int runde = 1;
 		
-		
-		for (int i = 0; i < spiel[runde].entries; i++)
+		for (int i = 0; i < spiel[runde].entries+1; i++)
 			if (i <=  spiel[runde].nset){
-				
 				myGui.JPosNr[i].setVisible(true);
-				
-				myGui.JPosition[i].setVisible(true);
-				
+				//myGui.JPosition[i].setVisible(true);
 			}
-				
-				
 			else{
 				myGui.JPosNr[i].setVisible(false);
 				//myGui.JPosition[i].setVisible(false);
